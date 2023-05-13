@@ -19,8 +19,8 @@ def close_db():
     app.mongodb.close()
 
 
-@app.get("/health")
-async def health():
+@app.get("/")
+async def root():
     return {
         "MongoDB": app.mongodb.server_info()["version"],
         "FastAPI": app.version,

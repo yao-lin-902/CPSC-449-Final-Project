@@ -67,7 +67,12 @@ async def search_book(request: Request, search: BookSearch = Depends()):
 
 @aggregate_router.get("/count", response_model=int)
 async def get_total_number_of_books(request: Request):
-    count = request.app.database["books"].count_documents({})
+    pipeline = [
+        {"$group": {"_id": "null", "count": {"$sum": "$stock"}}},
+        {"$project": {"_id": 0, "count": 1}},
+    ]
+    count = list(request.app.database["books"].aggregate(pipeline))
+    count = count[0]["count"]
     return count
 
 
