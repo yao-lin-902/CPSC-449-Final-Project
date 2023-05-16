@@ -5,7 +5,7 @@ from typing import Optional
 from uuid import uuid4
 
 
-# Define data models for a book, book updates, and book search
+# Define pydantic data models for a book, book updates, and book search
 # These models will be used for validating and deserializing input data
 class Book(BaseModel):
     id: str = Field(default_factory=uuid4, alias="_id")
