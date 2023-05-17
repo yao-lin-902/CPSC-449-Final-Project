@@ -15,7 +15,8 @@ Prerequisites:
 Python 3.7 or higher
 MongoDB (either locally or a cloud instance like MongoDB Atlas)
 
-Setup
+Setup:
+
 1. Open a terminal and navigate to the fastapi directory of project.
 
 2. Create a virtual environment: 
@@ -34,17 +35,20 @@ pip install -r requirements.txt
 
 6. Create and configure the .env file:
 - Ensure you are in fastapi directory, create a file named '.env'
-- In this file, specify the MongoDB URI and the database name, like this:
+- In this file, specify the MongoDB URI and the database name, like this:   
   DB_URI=mongodb+srv://username:password@cluster...
   DB_NAME=your_database_name
 - Replace the URI and the database name with your actual MongoDB URI and the name of your database.
 
 
 Running the API:
+
 1. Ensure you are in fastapi directory.
+
 2. Start the FastAPI server and enter the following into the terminal:
-uvicorn app.main:app --reload 
+uvicorn app.main:app --reload .
 The --reload flag enables hot reloading, which means the server will automatically update whenever you make changes to the code.
+
 3. Open the API in your browser:
 - You can now access the API at http://127.0.0.1:8000
 - To see the interactive API documentation, navigate to http://127.0.0.1:8000/docs
