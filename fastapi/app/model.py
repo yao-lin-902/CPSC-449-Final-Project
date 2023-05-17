@@ -26,7 +26,6 @@ class BookUpdate(BaseModel):
     price: Optional[float]
     stock: Optional[int]
 
-
 class BookSearch(BaseModel):
     title: Optional[str]
     author: Optional[str]

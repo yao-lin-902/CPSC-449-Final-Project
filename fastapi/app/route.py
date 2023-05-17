@@ -59,6 +59,7 @@ async def update_book(id: str, request: Request, book: BookUpdate = Body(...)):
 
 
 # Query router contains routes related to search operations
+# Operators 
 @query_router.get("/", response_model=List[Book])
 async def search_book(request: Request, search: BookSearch = Depends()):
     search = dict(filter(lambda v: v[1] != None, jsonable_encoder(search).items()))
@@ -74,7 +75,6 @@ async def search_book(request: Request, search: BookSearch = Depends()):
 # Aggregate router contains routes related to aggregation operations
 
 # Route to get total number of books in the stock
-
 @aggregate_router.get("/count", response_model=int)
 async def get_total_number_of_books(request: Request):
     pipeline = [
