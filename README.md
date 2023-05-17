@@ -35,8 +35,8 @@ pip install -r requirements.txt
 6. Create and configure the .env file:
 - Ensure you are in fastapi directory, create a file named '.env'
 - In this file, specify the MongoDB URI and the database name, like this:
-DB_URI=mongodb+srv://username:password@cluster...
-DB_NAME=your_database_name
+  DB_URI=mongodb+srv://username:password@cluster...
+  DB_NAME=your_database_name
 - Replace the URI and the database name with your actual MongoDB URI and the name of your database.
 
 
