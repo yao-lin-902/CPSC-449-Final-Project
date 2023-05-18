@@ -18,7 +18,7 @@ app = FastAPI()
 async def start_db():
     app.mongodb = AsyncIOMotorClient(config["DB_URI"])
     app.database = app.mongodb[config["DB_NAME"]]
-    print("MongoDB connection established:", app.mongodb is not None)
+    # print("MongoDB connection established:", app.mongodb is not None)
 
     
     # Create indexes for the 'books' collection
@@ -33,7 +33,7 @@ async def start_db():
 # Disconnect from MongoDB database when the application shuts down
 @app.on_event("shutdown")
 def close_db():
-    print("Closing MongoDB connection...")
+    # print("Closing MongoDB connection...")
     app.mongodb.close()
 
 # Default route to check the versions of MongoDB and FastAPI
